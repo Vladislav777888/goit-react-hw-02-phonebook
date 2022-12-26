@@ -25,7 +25,7 @@ export class App extends Component {
       number: number[0],
     };
 
-    const contactsInclude = this.state.contacts.some(el => el.name === name);
+    const contactsInclude = this.state.contacts.some(el => el.name === name[0]);
 
     if (contactsInclude) {
       alert(`${name} is already in contacts`);
@@ -38,8 +38,6 @@ export class App extends Component {
   };
 
   deleteContact = contactId => {
-    // console.log(contactId);
-
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
